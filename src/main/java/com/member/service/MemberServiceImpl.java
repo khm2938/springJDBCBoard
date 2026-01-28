@@ -22,26 +22,35 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public Member selectByNo(int no) throws Exception {
-		// 추후 작성 예정
-		return null;
+		return memberDAO.selectByNo(no);
 	}
 
 	@Override
 	public int updateMember(Member member) throws Exception {
-		// 추후 작성 예정
-		return 0;
+		int count = memberDAO.updateMember(member);
+		return count;
 	}
 
 	@Override
-	public int deleteMember(int no) throws Exception {
-		// 추후 작성 예정
-		return 0;
+	public int deleteMember(Member member) throws Exception {
+		int count = memberDAO.deleteMember(member);
+		return count;
 	}
 	
 	@Override
 	public List<Member> memberList() throws Exception {
-		// 추후 작성 예정
-		return null;
+		List<Member> memberList = memberDAO.memberList();
+		return memberList;
+	}
+
+	@Override
+	public List<Member> memberSearch(Member member) throws Exception {
+		return memberDAO.memberSearch(member);
+	}
+
+	@Override
+	public Member selectByUserId(String userId) {
+		return memberDAO.selectByUserId(userId);
 	}
 
 }

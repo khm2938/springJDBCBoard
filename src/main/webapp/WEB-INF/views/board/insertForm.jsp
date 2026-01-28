@@ -38,6 +38,9 @@
     .btn-submit { background-color: #007bff; color: white; } /* 전송 - 파란색 */
     .btn-cancel { background-color: #ffc107; color: #212529; } /* 취소 - 노란색 */
     .btn-list { background-color: #343a40; color: white; } /* 목록 - 검은색 */
+    
+    /* 회원목록 버튼 - 초록색 계열로 포인트 */
+    .btn-member { background-color: #28a745; color: white; }
 </style>
 </head>
 <body>
@@ -66,6 +69,7 @@
             <button type="submit" class="btn btn-submit">등록하기</button>
             <a href="/board/boardList" class="btn btn-list">목록</a>
         </div>
+        
     </form>
 </div>
 
