@@ -30,7 +30,67 @@
         text-decoration: none; font-weight: bold; transition: background-color 0.2s; 
     }
     .btn-write:hover { background-color: #0056b3; }
+	
+	/* Search Bar Styles - 기존 게시판 스타일과 통일 */
+    .search-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+    }
 
+    .search-form {
+        display: flex;
+        background: #ffffff;
+        border: 1px solid #ced4da; /* 테이블 경계선과 비슷한 색상 */
+        border-radius: 6px;
+        overflow: hidden;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    /* 포커스 되었을 때 글쓰기 버튼 색상과 통일 */
+    .search-form:focus-within {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    }
+
+    .search-select {
+        background: #f8f9fa;
+        color: #495057;
+        border: none;
+        border-right: 1px solid #ced4da;
+        outline: none;
+        padding: 8px 15px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .search-input {
+        background: transparent;
+        border: none;
+        color: #495057;
+        padding: 8px 15px;
+        width: 200px;
+        outline: none;
+        font-size: 14px;
+    }
+
+    .btn-search {
+        background-color: #f8f9fa;
+        border: none;
+        border-left: 1px solid #ced4da;
+        color: #007bff;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0 20px;
+        transition: background-color 0.2s;
+    }
+
+    .btn-search:hover {
+        background-color: #e9ecef;
+        color: #0056b3;
+    }
+	
+	
     /* 게시글 번호 등 강조 */
     .no-data { padding: 50px; color: #adb5bd; }
 </style>
@@ -39,7 +99,17 @@
 
 <div class="container">
     <h2>게시판 목록</h2>
-    
+    <div class="search-container">
+        <form action="/board/search" method="get" class="search-form">
+            <select name="searchType" class="search-select">
+                <option value="title">TITLE</option>
+                <option value="writer">WRITER</option>
+                <option value="content">CONTENT</option>
+            </select>
+            <input type="text" name="keyword" class="search-input" placeholder="Search mission...">
+            <button type="submit" class="btn-search">SEARCH</button>
+        </form>
+    </div>
     <table>
         <thead>
             <tr>
@@ -71,6 +141,7 @@
     </table>
 
     <div class="btn-area">
+        <a href="/board/boardList" class="btn-write">새로고침</a>
         <a href="/board/insertForm" class="btn-write">글쓰기</a>
     </div>
 </div>

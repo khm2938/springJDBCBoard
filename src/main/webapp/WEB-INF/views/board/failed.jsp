@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>T1 Community | Write</title>
+<title>failed display</title>
 <style>
-/* T1 Official Theme /
+
 :root {
     --t1-red: #E2012D;
     --t1-black: #0f0f0f;
@@ -57,9 +57,13 @@ body {
 
     <div class="write-container">
         <div class="header">
-            <h1>게시판 입력실패</h1>
+            <h1>${message}</h1>
         </div>
         
+    </div>
+    <div class="btn-area">
+    <a href="/board/insertForm"><button class="btn">게시판등록</button></a>
+    <a href="/board/boardList"><button class="btn">게시판리스트</button></a>
     </div>
 
 </body>
