@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>T1 Community | Write</title>
+<title>failed message</title>
 <style>
 /* T1 Official Theme /
 :root {

@@ -13,4 +13,6 @@ public class Member {
 	private String gender;
 	private int age;
 	private Date regDate;	
+	private String searchType;
+	private String keyword;
 }
